@@ -211,7 +211,7 @@
                     ctx.strokeStyle = hsl(hue, 70, lightness);
                 } else if (mode == "lit III") {
                     lightness = map(volume, 0, 100, 40, 70, true);
-                    add = map(volume, 0, 100, 0, 4) ** 3;
+                    add = map(volume, 0, 100, 0, 3) ** 3;
                     ctx.lineWidth = map(volume, 0, 100, 0, 10);
                     if (hue == 360) {
                         hue = 0;
