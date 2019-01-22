@@ -203,11 +203,18 @@
                 } else if (mode == "lit II") {
                     lightness = map(volume, 0, 100, 40, 70, true);
                     add = map(volume, 0, 100, 0, 3.5) ** 3;
-                    if (hue == 360) {
-                        hue = 0;
+                    
+                    if (volume > peak_vol - 20) {
+                        explode = 2;
+                        hue = randomInt(0, 360);
                     } else {
-                        hue += add;
+                        if (hue == 360) {
+                            hue = 0;
+                        } else {
+                            hue += add;
+                        }
                     }
+                    
                     ctx.strokeStyle = hsl(hue, 70, lightness);
                 } else if (mode == "lit III") {
                     lightness = map(volume, 0, 100, 40, 70, true);
